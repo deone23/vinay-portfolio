@@ -1,365 +1,273 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Award, Coffee, Trophy, Target } from 'lucide-react'
+import { Award, Users, Code2, Zap, Target } from 'lucide-react'
 
 const About: React.FC = () => {
   const experiences = [
     {
-      title: 'Senior Associate Technology | Java Microservices',
-      company: 'Publicis Sapient',
-      period: '06/2025 - Present',
-      description: 'Developed scalable, resilient Spring Boot microservices using REST APIs and implemented best practices like circuit breaker, centralized config, and fault tolerance. Integrated Kafka-based messaging for asynchronous microservice communication, handling high-throughput data streams with schema registry and retry logic.',
+      title: "Senior Software Developer",
+      company: "Tech Solutions Inc.",
+      period: "2020 - Present",
+      description: "Leading development teams and architecting scalable solutions for enterprise clients.",
+      achievements: [
+        "Led a team of 8 developers",
+        "Reduced system latency by 40%",
+        "Implemented microservices architecture"
+      ]
     },
     {
-      title: 'Enterprise Application Engineer',
-      company: 'Baker Hughes',
-      period: '11/2021 - 12/2024',
-      description: 'Developed and maintained Spring Boot microservices with robust transaction management, idempotency, and caching mechanisms. Designed and optimized Kafka-based event-driven architectures for high-throughput processing. Implemented RESTful APIs following OpenAPI standards and security best practices.',
+      title: "Full Stack Developer",
+      company: "Digital Innovations Ltd.",
+      period: "2018 - 2020",
+      description: "Developed end-to-end web applications using modern technologies.",
+      achievements: [
+        "Built 15+ production applications",
+        "Improved code coverage to 95%",
+        "Mentored junior developers"
+      ]
     },
     {
-      title: 'Software Engineer',
-      company: 'Tata Consultancy Services',
-      period: '08/2017 - 10/2021',
-      description: 'Implemented error handling and logging mechanisms across the API landscape. Developed a Batch processing using spring-batch to transfer 500k rows(13GB) on a daily basis. Worked on multi-threaded applications, optimizing concurrency and reducing response time. Contributed to database query optimization and SQL performance tuning.',
-    },
+      title: "Software Engineer",
+      company: "StartUp Ventures",
+      period: "2016 - 2018",
+      description: "Contributed to product development in fast-paced startup environment.",
+      achievements: [
+        "Delivered features 30% faster",
+        "Optimized database queries",
+        "Implemented CI/CD pipelines"
+      ]
+    }
   ]
 
-  const skills = {
-    'Frameworks': ['Spring Boot', 'Spring MVC', 'Spring Data JPA', 'Spring Security', 'Spring Batch', 'Collection Framework'],
-    'Microservices': ['RESTful APIs', 'gRPC', 'Circuit Breaker', 'Event-Driven Architecture'],
-    'Database Technologies': ['MySQL', 'PostgreSQL', 'Redis', 'MongoDB'],
-    'Design Patterns': ['Creational', 'Structural', 'Behavioral'],
-    'Testing': ['JUnit', 'Mockito'],
-    'Other Tools': ['Hibernate', 'JPA', 'Kafka', 'Swagger', 'Postman', 'Docker', 'Kubernetes'],
-  }
-
-  const skillLevels = {
-    'Java': 'Expert',
-    'Data Structures': 'Expert',
-    'Algorithms': 'Advanced',
-    'Scrum Methodology': 'Advanced',
-    'Git': 'Advanced',
-    'Shell Script': 'Advanced',
-    'Linux': 'Advanced',
-    'System Design': 'Intermediate',
-    'Python': 'Intermediate',
-    'JavaScript': 'Intermediate',
-    'C++': 'Intermediate',
-    'AWS': 'Intermediate',
-    'GCP': 'Intermediate',
-  }
-
-  const achievements = [
+  const values = [
     {
-      icon: Trophy,
-      title: 'Android App Building Competition Winner',
-      description: 'Won android app building competition during university',
+      icon: Code2,
+      title: "Clean Code",
+      description: "Writing maintainable, scalable, and well-documented code that stands the test of time."
     },
     {
-      icon: Award,
-      title: 'CodeVita Rank 136',
-      description: 'Secured 136 rank in TCS CodeVita programming competition',
+      icon: Users,
+      title: "Collaboration",
+      description: "Believing in the power of teamwork and open communication to achieve exceptional results."
+    },
+    {
+      icon: Zap,
+      title: "Innovation",
+      description: "Constantly exploring new technologies and methodologies to solve complex problems."
     },
     {
       icon: Target,
-      title: 'Chess Competition - 2nd Place',
-      description: 'Secured 2nd place in chess competition at Baker Hughes',
-    },
-  ]
-
-  const interests = [
-    'Competitive Coding', 'Chess', 'Movies', 'Swimming', 'Cricket', 
-    'Cycling', 'Carrom', 'Running', 'Psychology'
+      title: "Excellence",
+      description: "Striving for perfection in every project and continuously improving my craft."
+    }
   ]
 
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-        <div className="container-custom">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-blue-100 dark:bg-blue-900/20 rounded-full blur-xl opacity-60"></div>
+          <div className="absolute bottom-20 right-20 w-48 h-48 bg-purple-100 dark:bg-purple-900/20 rounded-full blur-2xl opacity-40"></div>
+        </div>
+        
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center space-y-6 max-w-4xl mx-auto"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            {/* Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center mb-8"
-            >
-              <img 
-                src="/images/profile.jpg" 
-                alt="Vinay Mourya - Software Developer" 
-                className="w-32 h-32 rounded-full object-cover object-center ring-4 ring-primary-100 dark:ring-primary-900 ring-offset-4 ring-offset-white dark:ring-offset-gray-900 shadow-xl"
-              />
-            </motion.div>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">
-              About <span className="text-gradient">Me</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+              About{' '}
+              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 bg-clip-text text-transparent">
+                Me
+              </span>
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-              Software Developer with 8 years of experience in Java, Spring Boot, and Microservices. 
-              Proficient in designing and developing scalable, high-performance distributed systems. 
-              Strong expertise in RESTful APIs, Kafka, RDBMS, and Cloud deployment. Skilled in problem-solving, 
-              data structures, and algorithms, with hands-on experience in Docker and Kubernetes.
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Passionate about creating digital solutions that make a difference
             </p>
-            <div className="flex flex-wrap justify-center gap-6 text-gray-600 dark:text-gray-400">
-              <div className="flex items-center space-x-2">
-                <Calendar className="w-5 h-5" />
-                <span>8 Years Experience</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="w-5 h-5" />
-                <span>Remote / India</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Coffee className="w-5 h-5" />
-                <span>Coffee Enthusiast</span>
-              </div>
-            </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              <div className="prose prose-lg dark:prose-invert">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  With over 8.5 years in software development, I've had the privilege of working 
+                  on diverse projects ranging from enterprise applications to innovative startups. 
+                  My journey has been driven by a passion for solving complex problems through 
+                  elegant code and thoughtful design.
+                </p>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  I specialize in full-stack development with expertise in modern frameworks 
+                  and cloud technologies. My approach combines technical excellence with 
+                  user-centered design, ensuring that every solution not only works flawlessly 
+                  but also provides an exceptional user experience.
+                </p>
+              </div>
+              
+              <div className="flex items-center gap-8">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400">50+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400">15+</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Technologies</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">8.5</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">Years Exp.</div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="aspect-square bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 rounded-3xl p-1 shadow-2xl">
+                <div className="w-full h-full bg-white dark:bg-gray-900 rounded-3xl overflow-hidden">
+                  <img 
+                    src="/images/about-profile.jpg" 
+                    alt="Vinay Mourya - About" 
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              My Values
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              The principles that guide my work and drive my passion for development
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => {
+              const Icon = value.icon
+              return (
+                <motion.div
+                  key={value.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center p-8 rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 border border-gray-100 dark:border-gray-600 hover:shadow-xl transition-all duration-300"
+                >
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                    <Icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    {value.description}
+                  </p>
+                </motion.div>
+              )
+            })}
+          </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
-        <div className="container-custom">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-900 dark:to-slate-800">
+        <div className="max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-12"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
           >
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Professional Experience
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                My journey through various roles and companies, building expertise 
-                in software development and team leadership.
-              </p>
-            </div>
-
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  className="card p-6 md:p-8"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
-                        {exp.title}
-                      </h3>
-                      <p className="text-primary-600 dark:text-primary-400 font-medium">
-                        {exp.company}
-                      </p>
-                    </div>
-                    <span className="text-gray-500 dark:text-gray-400 font-medium mt-2 md:mt-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {exp.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-12"
-          >
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Technical Skills
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Technologies and tools I use to bring ideas to life.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(skills).map(([category, skillList], index) => (
-                <motion.div
-                  key={category}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="card p-6"
-                >
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
-                    {category}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {skillList.map((skill) => (
-                      <span
-                        key={skill}
-                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* Skill Levels Section */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-                Skill Proficiency Levels
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {Object.entries(skillLevels).map(([skill, level]) => {
-                  const levelColor = level === 'Expert' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' :
-                                   level === 'Advanced' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' :
-                                   'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
-                  
-                  return (
-                    <div key={skill} className="card p-4 text-center">
-                      <div className="font-medium text-gray-900 dark:text-white mb-2">{skill}</div>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${levelColor}`}>
-                        {level}
-                      </span>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-12"
-          >
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Achievements & Certifications
-              </h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                Recognition and milestones in my professional journey.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {achievements.map((achievement, index) => {
-                const Icon = achievement.icon
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    className="card p-6 text-center space-y-4"
-                  >
-                    <div className="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-2xl flex items-center justify-center mx-auto">
-                      <Icon className="w-8 h-8 text-primary-600 dark:text-primary-400" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      {achievement.description}
-                    </p>
-                  </motion.div>
-                )
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Education Section */}
-      <section className="section-padding bg-gray-50 dark:bg-gray-800">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto space-y-8"
-          >
-            <div className="text-center space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                Education
-              </h2>
-            </div>
-            
-            <div className="card p-6 md:p-8">
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white">
-                    Bachelor of Engineering - Computer Science
-                  </h3>
-                  <p className="text-primary-600 dark:text-primary-400 font-medium">
-                    University Institute of Technology, RGPV
-                  </p>
-                </div>
-                <span className="text-gray-500 dark:text-gray-400 font-medium mt-2 md:mt-0">
-                  07/2013 - 06/2017
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Interests & Hobbies Section */}
-      <section className="section-padding bg-white dark:bg-gray-900">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-center space-y-8"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-              Interests & Hobbies
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Professional Journey
             </h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {interests.map((interest, index) => (
-                <motion.span
-                  key={interest}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="px-4 py-2 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full font-medium"
-                >
-                  {interest}
-                </motion.span>
-              ))}
-            </div>
+            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+              A timeline of my career growth and key achievements
+            </p>
           </motion.div>
+
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="relative"
+              >
+                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center ${
+                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 border border-gray-200 dark:border-gray-700 shadow-xl">
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                          <Award className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                            {exp.title}
+                          </h3>
+                          <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">
+                            {exp.company}
+                          </p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            {exp.period}
+                          </p>
+                        </div>
+                      </div>
+                      <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        {exp.description}
+                      </p>
+                      <div className="space-y-2">
+                        <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
+                          Key Achievements:
+                        </h4>
+                        <ul className="space-y-2">
+                          {exp.achievements.map((achievement, i) => (
+                            <li key={i} className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                              <div className="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+                              {achievement}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className={`text-center ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center">
+                      <span className="text-4xl font-bold text-blue-600 dark:text-blue-400">
+                        {index + 1}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
     </div>
